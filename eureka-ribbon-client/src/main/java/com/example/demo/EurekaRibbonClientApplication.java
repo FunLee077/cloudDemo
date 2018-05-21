@@ -16,7 +16,7 @@ public class EurekaRibbonClientApplication {
 	}
 
 	@Bean
-	@LoadBalanced
+	@LoadBalanced//负载均衡主要由该注解实现
 	RestTemplate restTemplate(){return new RestTemplate();}
 }
 
