@@ -14,6 +14,14 @@ management:
  security:
    enabled: false
 
+ribbon:
+ eureka:
+  enabled: false
+
+service-feign:
+ ribbon:
+  listOfServers: localhost:8765
+
 info:
   app:
     name: "@project.artifactId@"
@@ -21,3 +29,10 @@ info:
     java:
       source: '@java.version@'
       target: '@java.version@'
+
+zuul:
+ prefix: /zuul
+ routes:
+  service-feign:
+   path: /service-feign/**
+   serviceId: service-feign
